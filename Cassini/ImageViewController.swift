@@ -13,14 +13,28 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     var imageURL: NSURL? {
         didSet {
             image = nil
-            fetchImage()
+            if view.window != nil {
+                fetchImage()
+            }
         }
     }
     
     private func fetchImage() {
         if let url = imageURL {
-            if let imageData = NSData(contentsOfURL: url) {
-                image = UIImage(data: imageData)
+            spinner?.startAnimating()
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+                let contentsOfURL = NSData(contentsOfURL: url)
+                dispatch_async(dispatch_get_main_queue()) {
+                    if url == self.imageURL {
+                        if let imageData = contentsOfURL {
+                            self.image = UIImage(data: imageData)
+                        } else {
+                            self.spinner?.stopAnimating()
+                        }
+                    } else {
+                        print ("Ignored data returned from url \(url)")
+                    }
+                }
             }
         }
     }
@@ -40,6 +54,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     
     private var imageView = UIImageView()
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     private var image: UIImage? {
         get {
             return imageView.image
@@ -48,6 +64,14 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if image == nil {
+            fetchImage()
         }
     }
 

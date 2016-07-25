@@ -25,7 +25,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Earth"/>
                                         <connections>
-                                            <segue destination="M0J-xc-6fs" kind="showDetail" identifier="Show Image" id="cth-aN-WHM"/>
+                                            <action selector="showImage:" destination="Qwl-MA-9B1" eventType="touchUpInside" id="7Gd-js-713"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47A-XF-tzn">
@@ -33,7 +33,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Cassini"/>
                                         <connections>
-                                            <segue destination="M0J-xc-6fs" kind="showDetail" identifier="Show Image" id="rAk-di-i7G"/>
+                                            <action selector="showImage:" destination="Qwl-MA-9B1" eventType="touchUpInside" id="axP-Bp-cWH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02e-3B-yYG">
@@ -41,7 +41,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Saturn"/>
                                         <connections>
-                                            <segue destination="M0J-xc-6fs" kind="showDetail" identifier="Show Image" id="lbM-FI-4qe"/>
+                                            <action selector="showImage:" destination="Qwl-MA-9B1" eventType="touchUpInside" id="ZV2-km-vhA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -54,6 +54,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cassini" id="hAD-4T-gMa"/>
+                    <connections>
+                        <segue destination="M0J-xc-6fs" kind="show" identifier="Show Image" id="S08-Ru-1BY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpU-hx-05m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,11 +90,17 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fna-0J-WNS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JNt-7n-J5F">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" red="1" green="0.090196078430000007" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JNt-7n-J5F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AIR-tq-QOR"/>
                             <constraint firstItem="fna-0J-WNS" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="NWc-s1-KdS"/>
                             <constraint firstAttribute="trailing" secondItem="fna-0J-WNS" secondAttribute="trailing" id="Zgf-Gf-cpF"/>
+                            <constraint firstItem="JNt-7n-J5F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eIP-vn-1la"/>
                             <constraint firstItem="fna-0J-WNS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tOy-BT-cJU"/>
                             <constraint firstItem="fna-0J-WNS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yxM-Af-BNQ"/>
                         </constraints>
@@ -99,6 +108,7 @@
                     <navigationItem key="navigationItem" id="TOp-e1-3yl"/>
                     <connections>
                         <outlet property="scrollView" destination="fna-0J-WNS" id="sli-62-e3E"/>
+                        <outlet property="spinner" destination="JNt-7n-J5F" id="ThX-sL-txZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -143,6 +153,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rAk-di-i7G"/>
+        <segue reference="S08-Ru-1BY"/>
     </inferredMetricsTieBreakers>
 </document>

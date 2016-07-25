@@ -7,18 +7,58 @@
 //
 
 import UIKit
+import Twitter
 
 class TweetTableViewController: UITableViewController {
-
+    
+    var tweets = [Array<Twitter.Tweet>]() { //array of an array of Tweets
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var searchText: String? {
+        didSet {
+            tweets.removeAll()
+            searchForTweets()
+            title = searchText
+        }
+    }
+    
+    private var twitterRequest: Twitter.Request? {
+        if let query = searchText where !query.isEmpty {
+            return Twitter.Request(search: query + " -filter:retweets", count: 100)
+        }
+        return nil
+    }
+    
+    private var lastTwitterRequest: Twitter.Request?
+    
+    private func searchForTweets() {
+        if let request = twitterRequest {
+            lastTwitterRequest = request
+            request.fetchTweets { [weak weakSelf = self] newTweets in
+                dispatch_async(dispatch_get_main_queue()) {
+                    if request == weakSelf?.lastTwitterRequest {
+                        if !newTweets.isEmpty {
+                            weakSelf?.tweets.insert(newTweets, atIndex: 0)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchText = "#stanford"
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return tweets.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

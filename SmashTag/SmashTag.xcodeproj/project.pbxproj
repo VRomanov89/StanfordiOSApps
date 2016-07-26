@@ -14,6 +14,7 @@
 		634BF61E1D4686F7001149C7 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BF61D1D4686F7001149C7 /* TweetTableViewController.swift */; };
 		634BF6261D46CEDC001149C7 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634BF6251D46CEDC001149C7 /* Twitter.framework */; };
 		634BF6271D46CEDC001149C7 /* Twitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634BF6251D46CEDC001149C7 /* Twitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		634BF62A1D46D994001149C7 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BF6291D46D994001149C7 /* TweetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		634BF6161D46868A001149C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		634BF61D1D4686F7001149C7 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		634BF6251D46CEDC001149C7 /* Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Twitter.framework; path = "/Users/VladRomanov/Library/Developer/Xcode/DerivedData/Lecture9-avoqzneolaquiaexxaruwfymtdbf/Build/Products/Debug-iphoneos/Twitter.framework"; sourceTree = "<absolute>"; };
+		634BF6291D46D994001149C7 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				634BF60E1D46868A001149C7 /* Main.storyboard */,
+				634BF6291D46D994001149C7 /* TweetTableViewCell.swift */,
 				634BF61D1D4686F7001149C7 /* TweetTableViewController.swift */,
 				634BF61C1D4686AA001149C7 /* Supporting Files */,
 			);
@@ -165,6 +168,7 @@
 			files = (
 				634BF60B1D46868A001149C7 /* AppDelegate.swift in Sources */,
 				634BF61E1D4686F7001149C7 /* TweetTableViewController.swift in Sources */,
+				634BF62A1D46D994001149C7 /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

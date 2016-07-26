@@ -88,6 +88,16 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         //searchText = "#stanford"
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TweetersMentioningSearchTerm" {
+            if let tweetersTVC = segue.destinationViewController as? TweetersTableViewController {
+                tweetersTVC.mention = searchText
+                tweetersTVC.managedObjectContext = managedObjectContext
+                print("test3")
+            }
+        }
+    }
 
     // MARK: - Table view data source
 

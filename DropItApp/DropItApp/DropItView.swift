@@ -8,9 +8,16 @@
 
 import UIKit
 
-class DropItView: UIView {
+class DropItView: NamedBezierPathView, UIDynamicAnimatorDelegate {
+    private lazy var animator: UIDynamicAnimator = {
+        let animator = UIDynamicAnimator(referenceView: self)
+        animator.delegate = self
+        return animator
+    }()
+    func dynamicAnimatorDidPause(animator: UIDynamicAnimator) {
+        removeCompletedRow()
+    }
     private let dropBehavior = FallingObjectBehavior()
-    private lazy var animator: UIDynamicAnimator = UIDynamicAnimator(referenceView: self)
     var animating: Bool = false {
         didSet {
             if animating {
@@ -19,6 +26,14 @@ class DropItView: UIView {
                 animator.removeBehavior(dropBehavior)
             }
         }
+    }
+    private struct PathNames {
+        static let MiddleBarrier = "Middle Barrier"
+    }
+    override func layoutSubviews() {
+        let path = UIBezierPath(ovalInRect: CGRect(center: bounds.mid, size: dropSize))
+        dropBehavior.addBarrier(path, named: PathNames.MiddleBarrier)
+        bezierPaths[PathNames.MiddleBarrier] = path
     }
     private let dropsPerRow = 10
     private var dropSize: CGSize {
@@ -32,5 +47,34 @@ class DropItView: UIView {
         drop.backgroundColor = UIColor.random
         addSubview(drop)
         dropBehavior.addItem(drop)
+    }
+    private func removeCompletedRow()
+    {
+        var dropsToRemove = [UIView]()
+        
+        var hitTestRect = CGRect(origin: bounds.lowerLeft, size: dropSize)
+        repeat {
+            hitTestRect.origin.x = bounds.minX
+            hitTestRect.origin.y -= dropSize.height
+            var dropsTested = 0
+            var dropsFound = [UIView]()
+            while dropsTested < dropsPerRow {
+                if let hitView = hitTest(hitTestRect.mid) where hitView.superview == self {
+                    dropsFound.append(hitView)
+                } else {
+                    break
+                }
+                hitTestRect.origin.x += dropSize.width
+                dropsTested += 1
+            }
+            if dropsTested == dropsPerRow {
+                dropsToRemove += dropsFound
+            }
+        } while dropsToRemove.count == 0 && hitTestRect.origin.y > bounds.minY
+        
+        for drop in dropsToRemove {
+            dropBehavior.removeItem(drop)
+            drop.removeFromSuperview()
+        }
     }
 }

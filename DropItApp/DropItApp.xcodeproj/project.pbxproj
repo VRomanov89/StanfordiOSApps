@@ -13,6 +13,8 @@
 		636115F61D491C8B0034480E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636115F41D491C8B0034480E /* LaunchScreen.storyboard */; };
 		636115FF1D491CDF0034480E /* DropItView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636115FE1D491CDF0034480E /* DropItView.swift */; };
 		636116011D491CF90034480E /* DropItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636116001D491CF90034480E /* DropItViewController.swift */; };
+		636116031D491E7A0034480E /* UIKit Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636116021D491E7A0034480E /* UIKit Extensions.swift */; };
+		636116051D4921D90034480E /* FallingObjectBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636116041D4921D90034480E /* FallingObjectBehavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		636115F71D491C8B0034480E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		636115FE1D491CDF0034480E /* DropItView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItView.swift; sourceTree = "<group>"; };
 		636116001D491CF90034480E /* DropItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItViewController.swift; sourceTree = "<group>"; };
+		636116021D491E7A0034480E /* UIKit Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit Extensions.swift"; sourceTree = "<group>"; };
+		636116041D4921D90034480E /* FallingObjectBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallingObjectBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				636115EF1D491C8B0034480E /* Main.storyboard */,
 				636115FE1D491CDF0034480E /* DropItView.swift */,
+				636116041D4921D90034480E /* FallingObjectBehavior.swift */,
+				636116021D491E7A0034480E /* UIKit Extensions.swift */,
 				636116001D491CF90034480E /* DropItViewController.swift */,
 				636115FD1D491CAF0034480E /* Supporting Files */,
 			);
@@ -148,7 +154,9 @@
 			files = (
 				636116011D491CF90034480E /* DropItViewController.swift in Sources */,
 				636115FF1D491CDF0034480E /* DropItView.swift in Sources */,
+				636116051D4921D90034480E /* FallingObjectBehavior.swift in Sources */,
 				636115EC1D491C8B0034480E /* AppDelegate.swift in Sources */,
+				636116031D491E7A0034480E /* UIKit Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

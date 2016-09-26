@@ -5,6 +5,53 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--All Qand As Table View Controller-->
+        <scene sceneID="2PB-PW-zR1">
+            <objects>
+                <tableViewController id="3JA-EA-1FE" customClass="AllQandAsTableViewController" customModule="Pollster" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IMC-cy-OED">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QandA Cell" textLabel="3R3-tv-iNT" style="IBUITableViewCellStyleDefault" id="ekA-3M-u8k">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ekA-3M-u8k" id="uzk-HJ-lga">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3R3-tv-iNT">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Jm0-lg-cEx" kind="show" identifier="Show QandA" trigger="accessoryAction" id="hPj-NC-cOl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3JA-EA-1FE" id="INA-hb-Ory"/>
+                            <outlet property="delegate" destination="3JA-EA-1FE" id="Gvf-9y-i6H"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1vI-HK-gKT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZXW-qh-U6h">
+                            <connections>
+                                <segue destination="Jm0-lg-cEx" kind="show" identifier="Show QandA" id="KKR-Q6-rUN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Wb-Cy-AMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="348"/>
+        </scene>
         <!--Could QandA View Controller-->
         <scene sceneID="YGn-cs-zu1">
             <objects>
@@ -45,12 +92,15 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Jm0-lg-cEx" kind="relationship" relationship="rootViewController" id="xpf-R7-dH4"/>
+                        <segue destination="3JA-EA-1FE" kind="relationship" relationship="rootViewController" id="10Y-7Z-LdW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRk-os-f1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="348"/>
+            <point key="canvasLocation" x="-413" y="348"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hPj-NC-cOl"/>
+    </inferredMetricsTieBreakers>
 </document>

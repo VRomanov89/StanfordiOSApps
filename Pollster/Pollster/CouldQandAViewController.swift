@@ -51,7 +51,7 @@ class CouldQandAViewController: QandATableViewController {
             
             if error?.code == CKErrorCode.ServerRecordChanged.rawValue {
                 //ignore
-                print("test1")
+                //print("test1")
             } else if error != nil {
                 self.retryAfterError(error, withSelector: #selector(self.iCloudUpdate))
                 print("\(error?.userInfo.description)")
@@ -75,6 +75,6 @@ class CouldQandAViewController: QandATableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ckQandARecord = CKRecord(recordType: Cloud.Entity.QandA)
+        //ckQandARecord = CKRecord(recordType: Cloud.Entity.QandA)
     }
 }

@@ -17,6 +17,7 @@
 		6320C7FB1D4A7BA6009EF8A1 /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320C7F71D4A7BA6009EF8A1 /* TextTableViewController.swift */; };
 		6320C7FD1D4A7C5E009EF8A1 /* CouldQandAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320C7FC1D4A7C5E009EF8A1 /* CouldQandAViewController.swift */; };
 		6320C8001D4A8644009EF8A1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6320C7FF1D4A8644009EF8A1 /* CloudKit.framework */; };
+		6320C8021D4A9AF3009EF8A1 /* AllQandAsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320C8011D4A9AF3009EF8A1 /* AllQandAsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		6320C7FC1D4A7C5E009EF8A1 /* CouldQandAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouldQandAViewController.swift; sourceTree = "<group>"; };
 		6320C7FE1D4A8632009EF8A1 /* Pollster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Pollster.entitlements; sourceTree = "<group>"; };
 		6320C7FF1D4A8644009EF8A1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		6320C8011D4A9AF3009EF8A1 /* AllQandAsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllQandAsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				6320C7F51D4A7BA6009EF8A1 /* QandAAccessoryTableViewController.swift */,
 				6320C7F61D4A7BA6009EF8A1 /* QandATableViewController.swift */,
 				6320C7FC1D4A7C5E009EF8A1 /* CouldQandAViewController.swift */,
+				6320C8011D4A9AF3009EF8A1 /* AllQandAsTableViewController.swift */,
 				6320C7F71D4A7BA6009EF8A1 /* TextTableViewController.swift */,
 				6320C7E81D4A7B1D009EF8A1 /* Assets.xcassets */,
 				6320C7EA1D4A7B1D009EF8A1 /* LaunchScreen.storyboard */,
@@ -172,6 +175,7 @@
 				6320C7FD1D4A7C5E009EF8A1 /* CouldQandAViewController.swift in Sources */,
 				6320C7FA1D4A7BA6009EF8A1 /* QandATableViewController.swift in Sources */,
 				6320C7E21D4A7B1D009EF8A1 /* AppDelegate.swift in Sources */,
+				6320C8021D4A9AF3009EF8A1 /* AllQandAsTableViewController.swift in Sources */,
 				6320C7F91D4A7BA6009EF8A1 /* QandAAccessoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
